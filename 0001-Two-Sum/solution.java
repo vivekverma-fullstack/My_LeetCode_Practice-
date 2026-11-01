@@ -1,13 +1,15 @@
 class Solution {
-    public int[] twoSum(int[] nums, int target) {
-        HashMap<Integer, Integer> map = new HashMap<>();
-        for(int i = 0; i < nums.length; i++){
-            int remain = target - nums[i];
-            if(map.containsKey(remain)){
-                return new int[]{map.get(remain),i};
+    public void reverseString(char[] s) {
+        int left = 0;
+        int right = s.length - 1;
+        for(int i =0; i < s.length; i++){
+            if(left < right){
+                char temp = s[left];
+                s[left] = s[right];
+                s[right] = temp;
             }
-            map.put(nums[i], i);
+            left++;
+            right--;
         }
-        return new int[]{};
     }
 }
